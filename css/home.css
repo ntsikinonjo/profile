@@ -1,0 +1,20 @@
+body {
+    overflow-x: hidden;
+}
+
+/*
+    (xs) Extra small (portrait phones, less than 576px)
+    No media query since this is the default in bootstrap
+    
+    (sm) Small (landscape phones, 576px and up)
+    @media (min-width: 576px) {...}
+
+    (md) Medium (tablets, 768px and up)
+    @media (min-width: 768px) {...}
+
+    (lg) large (desktops, 992px and up)
+    @media (min-width: 992px) {...}
+
+    (xl) Extra large (large desktops, 1200px and up)
+    @media (min-width: 1200px) {..}
+ */
