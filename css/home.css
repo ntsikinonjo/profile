@@ -2,6 +2,10 @@ body {
     overflow-x: hidden;
 }
 
+header {
+    background-color: #1a1a1a;
+}
+
 .img-block {
     display: block;
 }
