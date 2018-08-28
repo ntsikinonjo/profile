@@ -46,7 +46,9 @@ function floatingActionMenu(width, scroll) {
         $('.fam').animate({right: '0px'}, 'slow');
     }
     else if (scroll < positionMarker) {
-        $('.fam').remove();
+        $('.fam').animate({opacity: '0.0'}, 'fast', function() {
+            $('.fam').remove();
+        });
     }
 
 }
