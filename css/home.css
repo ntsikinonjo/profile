@@ -16,6 +16,12 @@ header {
     top: 0px;
 }
 
+.fam-stretch {
+    background-color:#1a1a1a;
+    position: fixed;
+    top: 0px;
+}
+
 /*
     (xs) Extra small (portrait phones, less than 576px)
     No media query since this is the default in bootstrap

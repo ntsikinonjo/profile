@@ -29,11 +29,17 @@ function floatingActionMenu(width, scroll) {
 
     // portrait mobile phone 576px and less
     var fam = $('.fam').html();
+    var famStretch = $('.fam-stretch').html();
     var navigation = $('.navigation').html();
     var headerChildren = $('header').children().length;
     var positionMarker = $('#position-marker').position().top;
 
     if (width <= 576) {
+        if (famStretch != undefined) {
+            $('.fam-stretch').animate({opacity: '0.0'}, 'fast', function() {
+                $('.fam-stretch').remove();
+            });
+        }
         if (headerChildren == 0) {
             $('header').append(
                 '<img class="mx-auto img-block m-2" src="img/logo.png" style="display: block;">'
@@ -48,7 +54,7 @@ function floatingActionMenu(width, scroll) {
                     $('#position-marker').after(
                         '<img class="fam m-2 p-2" src="img/logo-small.png" style="right: -120vw;">'
                     );
-                    $('.fam').animate({right: '0px'}, 'slow');
+                    $('.fam').animate({right: '0px'}, 'fast');
                 }
                 else if (scroll < positionMarker) {
                     $('.fam').animate({opacity: '0.0'}, 'fast', function() {
@@ -68,8 +74,11 @@ function floatingActionMenu(width, scroll) {
         }
     }
     else if (width > 576) {
-
-        //
+        if (fam != undefined) {
+            $('.fam').animate({opacity: '0.0'}, 'fast', function() {
+                $('.fam').remove();
+            });
+        }
         if (headerChildren == 0) {
             $('header').append(
                 '<nav class="navigation navbar navbar-light">' +
@@ -81,7 +90,17 @@ function floatingActionMenu(width, scroll) {
         }
         else {
             if ($('.navigation').html() != undefined) {
-
+                if (scroll >= positionMarker && famStretch == undefined) {
+                    //
+                    $('#position-marker').after(
+                        '<img class="fam-stretch m-2 p-2" src="img/logo-stretch-small.png" style="left: 0px;">'
+                    );
+                }
+                else if (scroll < positionMarker) {
+                    $('.fam-stretch').animate({opacity: '0.0'}, 'fast', function() {
+                        $('.fam-stretch').remove();
+                    });
+                }
             }
             else {
                 $('header').empty();
