@@ -1,0 +1,41 @@
+\documentclass[12pt]{article}
+\usepackage{array, xcolor, lipsum}
+\usepackage[margin=2cm]{geometry}
+
+\title{\bfseries\Huge Ntsikelelo Nonjoli}
+\author{ntsikinonjo@gmail.com}
+\date{}
+
+\definecolor{lightgray}{gray}{0.8}
+\newcolumntype{L}{>{\raggedleft}p{0.14\textwidth}}
+\newcolumntype{R}{p{0.8\textwidth}}
+\newcommand\VRule{\color{lightgray}\vrule width 0.5pt}
+
+\begin{document}
+	
+\maketitle
+\vspace{1em}
+% address %
+\begin{minipage}[ht]{0.48\textwidth}
+	35 Jorissen St\\
+	Johannesburg 2001\\
+	Gauteng
+\end{minipage}
+% other %
+\begin{minipage}[ht]{0.48\textwidth}
+	\flushright
+	ID number : 950106 5428 086\\
+	Cellphone number : +27 74 843 1421
+\end{minipage}
+\vspace{20pt}
+
+\section*{Objective}
+Find a job
+
+\section*{Education}
+\begin{tabular}{L!{\VRule}R}
+	2005--2007&{\bf MSc in Computer Science, Great University, Country.}\\[5pt]
+	2001--2005&BSc in Life Science, Great University, Country.\\
+\end{tabular}
+	
+\end{document}
