@@ -10,9 +10,14 @@
  * 
  * connection
  * used for content resolution
+ * 
+ * menu
+ * used to determine if menu is
+ * open or not opened
  */
 var xWin, yWin
 var connection
+var menu = false
 
 /**
  * element variables
@@ -52,11 +57,20 @@ menuStroke.addEventListener('mouseover', function() {
 
     // change stroke colours
     $('.menu-btn-stroke').css('background', '#3771C8')
+    $('#menu-stroke').css('border-color', '#202020')
 })
 menuStroke.addEventListener('mouseleave', function() {
 
     // change stroke colours back
-    $('.menu-btn-stroke').css('background', '#202020')
+    if (!menu) {
+        $('.menu-btn-stroke').css('background', '#202020')
+        $('#menu-stroke').css('border-color', 'transparent')
+    }
+
+    // if menu is open keep border
+    if (menu) {
+        $('#menu-stroke').css('border-color', '#202020')
+    }
 })
 menuStroke.addEventListener('click', function(event) {
 
@@ -65,6 +79,18 @@ menuStroke.addEventListener('click', function(event) {
 
     // change stroke colours
     $('.menu-btn-stroke').css('background', '#3771C8')
+    $('#menu-stroke').css('border-color', '#202020 !important')
 
     // handle click
+    if (menu) {
+        menu = false
+        // show menu
+        $('#menu-pop').css('display', 'none')
+        $('#menu-pop').removeClass('transY', 'slow')
+    }
+    else if (!menu) {
+        menu = true
+        $('#menu-pop').css('display', 'block')
+        $('#menu-pop').addClass('transY', 'slow')
+    }
 })

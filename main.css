@@ -32,6 +32,15 @@ div#menu-btn {
 div#menu-pop {
     z-index: 20;
     position: absolute;
+    transform: scaleY(0.1);
+    display: none;
+    transform-origin: center bottom;
+    transition: all cubic-bezier(0.445, 0.05, 0.55, 0.95) 200ms;
+    
+}
+.transY {
+    transform: scaleY(1.0) !important;
+    transition: all cubic-bezier(0.445, 0.05, 0.55, 0.95) 200ms;
 }
 
 /* menu items */
@@ -112,9 +121,6 @@ div#menu-pop > ul > li > span {
         padding: 4px;
         transition: all cubic-bezier(0.445, 0.05, 0.55, 0.95) 300ms;
     }
-    div#menu-stroke:hover {
-        border-color: rgb(32, 32, 32)
-    }
     div.menu-btn-stroke {
         width: 100%;
         height: 4px;
@@ -179,9 +185,6 @@ div#menu-pop > ul > li > span {
         border-radius: 4px;
         padding: 4px;
         transition: all cubic-bezier(0.445, 0.05, 0.55, 0.95) 300ms;
-    }
-    div#menu-stroke:hover {
-        border-color: rgb(32, 32, 32)
     }
     div.menu-btn-stroke {
         width: 100%;
