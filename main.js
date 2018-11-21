@@ -77,20 +77,26 @@ menuStroke.addEventListener('click', function(event) {
     // prevent default before dealing with click
     event.preventDefault()
 
-    // change stroke colours
-    $('.menu-btn-stroke').css('background', '#3771C8')
-    $('#menu-stroke').css('border-color', '#202020 !important')
-
     // handle click
     if (menu) {
         menu = false
-        // show menu
+        // close
         $('#menu-pop').css('display', 'none')
         $('#menu-pop').removeClass('transY', 'slow')
+
+        // change stroke colours
+        $('.menu-btn-stroke').css('background', '#202020')
+        $('#menu-stroke').css('border-color', 'transparent')
     }
     else if (!menu) {
         menu = true
+
+        // show menu
         $('#menu-pop').css('display', 'block')
         $('#menu-pop').addClass('transY', 'slow')
+        
+        // change stroke colours
+        $('.menu-btn-stroke').css('background', '#3771C8')
+        $('#menu-stroke').css('border-color', '#202020')
     }
 })
