@@ -145,10 +145,11 @@ div#menu-pop > ul > li > span {
     /* menu pop up */
     div#menu-pop {
         width: calc(100vw - 16px);
-        height: calc(100vh - 8px - 16px - 48px);
+        height: calc(100% - 8px - 16px - 48px);
         top: 0px;
         left: 0px;
         margin: 8px;
+        z-index: 50;
     }
 }
 @media only screen and (min-width: 768px) and (max-width: 992px) {
