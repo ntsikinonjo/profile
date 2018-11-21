@@ -2,32 +2,36 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Title & Icon -->
-    <title>Welcome</title>
+    <!-- icon and title -->
+    <title>Developer | Designer | The best of both worlds!</title>
 
-    <!-- Cascading Style Sheets-->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="css/home.css" />
+    <!-- css and fonts -->
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
 <body>
-    <header class="p-2"></header>
-    <div id="position-marker"></div>
-    <img class="img-fluid" src="img/test.jpg">
+    <!-- site logo -->
+    <img id="n-logo" src="img/logo-256x256.png" alt="site logo">
+    <img id="n-banner" src="img/banner-652x256.png" alt="site banner">
 
-    <div class="jumbotron">
-        <h1 class="display-3">Ntsiki, develops</h1>
-        <p class="lead">Let me tell you my story</p>
-        <p class="lead">
-            <a class="btn btn-dark btn-lg w-100" href="Jumbo action link" role="button">Read more...</a>
-        </p>
+    <svg width="100%" height="200">
+        <polyline id="hexagon" points="87,0 174,50 174,150 87,200 0,150 0,50 87,0" />
+    </svg>
+
+    <div id="app" style="margin-top: 200px">
+
+        <router-link to="/foo">Go to Foo</router-link>
+        <router-view></router-view>
+
     </div>
 
-    <!-- Scripts -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/home.js"></script>
+    <!-- scripts -->
+    <script src="jquery.min.js"></script>
+    <script src="vue.js"></script>
+    <script src="vue-router.js"></script>
+    <script src="app.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

@@ -1,0 +1,84 @@
+/**
+ * CSS for entire website
+ */
+
+body, html {
+    overflow: hidden;
+}
+
+img#n-logo, img#n-banner {
+    position: fixed;
+    z-index: 5;
+}
+
+/* breakpoints */
+@media only screen and (max-width: 768px) {
+    /* smart phones */
+    
+    /* site logo  */
+    img#n-logo {
+        width: 48px;
+        height: 48px;
+        top: 8px;
+        left: calc((100vw/2) - 24px);
+    }
+
+    /* site banner */
+    img#n-banner {
+        width: auto;
+        height: 48px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    /* small devices or tablets */
+    
+    /* site logo */
+    img#n-logo {
+        width: 64px;
+        height: 64px;
+        top: 16px;
+        left: calc((100vw/2) - 32px);
+    }
+
+    /* site banner */
+    img#n-banner {
+        width: auto;
+        height: 48px;
+        top: calc(16px + 64px + 8px);
+        left: calc((100vw/2) - 61.125px);
+    }
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    /* medium devices */
+    img#n-logo {
+        width: 96px;
+        height: 96px;
+        top: 24px;
+        left: calc((100vw/2) - 48px);
+    }
+
+    /* site banner */
+    img#n-banner {
+        width: auto;
+        height: 48px;
+        top: calc(24px + 96px + 8px);
+        left: calc((100vw/2) - 61.125px);
+    }
+}
+@media only screen and (min-width: 1200px) {
+    /* large devices */
+
+    /* site logo */
+    img#n-logo {
+        width: 104px;
+        height: 104px;
+        top: 32px;
+        left: calc((100vw/2) - 52px);
+    }
+
+    /* site banner */
+    img#n-banner {
+        width: auto;
+        height: 48px;
+    }
+}
