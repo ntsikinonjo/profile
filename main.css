@@ -36,6 +36,10 @@ div#menu-pop {
     display: none;
     transform-origin: center bottom;
     transition: all cubic-bezier(0.445, 0.05, 0.55, 0.95) 200ms;
+    border: 1px solid rgba(32, 32, 32, 0.1);
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0px 0px 40px 2px rgba(32, 32, 32, 0.1);
     
 }
 .transY {
@@ -145,10 +149,6 @@ div#menu-pop > ul > li > span {
         top: 0px;
         left: 0px;
         margin: 8px;
-        border: 1px solid rgba(32, 32, 32, 0.1);
-        background: white;
-        border-radius: 16px;
-        box-shadow: 0px 0px 40px 2px rgba(32, 32, 32, 0.1);
     }
 }
 @media only screen and (min-width: 768px) and (max-width: 992px) {
@@ -202,6 +202,24 @@ div#menu-pop > ul > li > span {
         margin-top: 4px;
         transition: all cubic-bezier(0.445, 0.05, 0.55, 0.95) 300ms;
     }
+
+    /* menu pop up */
+    div#menu-pop {
+        width: 40vw;
+        height: 65vh;
+        bottom: calc(24px + 48px);
+        left: calc((100vw/2) - (40vw/2));
+    }
+
+    /* resize menu item text */
+    div#menu-pop > h1 {
+        margin: 18px 0px;
+        font-size: 18px;
+    }
+    div#menu-pop > ul > li {
+        padding: 16px 20px;
+        font-size: 20px;
+    }
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
     /* medium devices */
@@ -218,6 +236,57 @@ div#menu-pop > ul > li > span {
         height: 48px;
         top: calc(24px + 96px + 8px);
         left: calc((100vw/2) - 61.125px);
+    }
+
+    /* menu button */
+    div#menu-btn {
+        width: 48px;
+        height: auto;
+        overflow: hidden;
+        position: fixed;
+        bottom: 24px;
+        left: calc((100vw/2) - 24px);
+        cursor: pointer;
+    }
+    div#menu-stroke {
+        border: 2px solid transparent;
+        border-radius: 4px;
+        padding: 4px;
+        transition: all cubic-bezier(0.445, 0.05, 0.55, 0.95) 300ms;
+    }
+    div.menu-btn-stroke {
+        width: 100%;
+        height: 4px;
+        background: rgb(32, 32, 32);
+    }
+    div#stroke-1 {
+        transition: all cubic-bezier(0.445, 0.05, 0.55, 0.95) 300ms;
+    }
+    div#stroke-2 {
+        margin-top: 4px;
+        transition: all cubic-bezier(0.445, 0.05, 0.55, 0.95) 300ms;
+    }
+    div#stroke-3 {
+        margin-top: 4px;
+        transition: all cubic-bezier(0.445, 0.05, 0.55, 0.95) 300ms;
+    }
+
+    /* menu pop up */
+    div#menu-pop {
+        width: 25vw;
+        height: 60vh;
+        bottom: calc(24px + 48px);
+        left: calc((100vw/2) - (25vw/2));
+    }
+
+    /* resize menu item text */
+    div#menu-pop > h1 {
+        margin: 16px 0px;
+        font-size: 18px;
+    }
+    div#menu-pop > ul > li {
+        padding: 16px 20px;
+        font-size: 18px;
     }
 }
 @media only screen and (min-width: 1200px) {
@@ -238,5 +307,56 @@ div#menu-pop > ul > li > span {
         src: url(img/banner-1305x512.png);
         top: calc(24px + 104px + 8px);
         left: calc((100vw/2) - (142.734375px/2));
+    }
+
+    /* menu button */
+    div#menu-btn {
+        width: 56px;
+        height: auto;
+        overflow: hidden;
+        position: fixed;
+        bottom: 12px;
+        left: calc((100vw/2) - 28px);
+        cursor: pointer;
+    }
+    div#menu-stroke {
+        border: 3px solid transparent;
+        border-radius: 4px;
+        padding: 4px;
+        transition: all cubic-bezier(0.445, 0.05, 0.55, 0.95) 300ms;
+    }
+    div.menu-btn-stroke {
+        width: 100%;
+        height: 6px;
+        background: rgb(32, 32, 32);
+    }
+    div#stroke-1 {
+        transition: all cubic-bezier(0.445, 0.05, 0.55, 0.95) 300ms;
+    }
+    div#stroke-2 {
+        margin-top: 5px;
+        transition: all cubic-bezier(0.445, 0.05, 0.55, 0.95) 300ms;
+    }
+    div#stroke-3 {
+        margin-top: 5px;
+        transition: all cubic-bezier(0.445, 0.05, 0.55, 0.95) 300ms;
+    }
+
+    /* menu pop up */
+    div#menu-pop {
+        width: 20vw;
+        height: 50vh;
+        bottom: calc(12px + 56px);
+        left: calc((100vw/2) - (20vw/2));
+    }
+
+    /* resize menu item text */
+    div#menu-pop > h1 {
+        margin: 18px 0px;
+        font-size: 18px;
+    }
+    div#menu-pop > ul > li {
+        padding: 12px 20px;
+        font-size: 16px;
     }
 }
