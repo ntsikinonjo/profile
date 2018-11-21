@@ -149,6 +149,8 @@ div#menu-pop > ul > li > span {
         top: 0px;
         left: 0px;
         margin: 8px;
+    }
+    div#menu-btn {
         z-index: 50;
     }
 }
