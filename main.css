@@ -4,6 +4,7 @@
 
 body, html {
     overflow: hidden;
+    height: 100%;
 }
 
 /* fonts */
@@ -60,8 +61,8 @@ div#menu-pop > ul {
     list-style: none;
 }
 div#menu-pop > ul > li {
-    padding: 16px 24px;
-    font-size: 22px;
+    padding: 14px 24px;
+    font-size: 18px;
     cursor: pointer;
 }
 div#menu-pop > ul > li:hover {
