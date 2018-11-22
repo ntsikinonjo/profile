@@ -18,12 +18,8 @@
     <img id="n-logo" src="img/logo-256x256.png" alt="site logo">
     <img id="n-banner" src="img/banner-652x256.png" alt="site banner">
 
-    <div id="app" style="margin-top: 200px">
-
-        <router-link to="/foo">Go to Foo</router-link>
-        <router-view></router-view>
-
-    </div>
+    <!-- Vue.js dynamic components appear here -->
+    <div id="app"><router-view></router-view></div>
 
     <!-- menu button -->
     <div id="menu-btn">
@@ -36,13 +32,13 @@
 
     <!-- menu pop up -->
     <div id="menu-pop">
-        <!-- unordered list of menu items -->
+        <!-- menu items -->
         <h1>What would you like to see?</h1>
         <ul>
-            <li class="menu-item"><i class="fa fa-info-circle"></i><span>&emsp;about</span></li>
-            <li class="menu-item"><i class="far fa-file-alt"></i><span>&emsp;r&eacute;sum&eacute;</span></li>
-            <li class="menu-item"><i class="far fa-copy"></i><span>&emsp;academics</span></li>
-            <li class="menu-item"><i class="far fa-envelope-open"></i><span>&emsp;Get in touch</span></li>
+            <li id="link-about" class="menu-item"><i class="fa fa-info-circle"></i><span>&emsp;about</span></li>
+            <li id="link-resume" class="menu-item"><i class="far fa-file-alt"></i><span>&emsp;r&eacute;sum&eacute;</span></li>
+            <li id="link-academics" class="menu-item"><i class="far fa-copy"></i><span>&emsp;academics</span></li>
+            <li id="link-contact" class="menu-item"><i class="far fa-envelope-open"></i><span>&emsp;get in touch</span></li>
         </ul>
     </div>
 

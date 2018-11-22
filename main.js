@@ -10,14 +10,9 @@
  * 
  * connection
  * used for content resolution
- * 
- * menu
- * used to determine if menu is
- * open or not opened
  */
 var xWin, yWin
 var connection
-var menu = false
 
 /**
  * element variables
@@ -40,17 +35,6 @@ $(document).ready(function() {
 })
 
 /**
- * Window has been resized
- */
-$(window).on('resize', function() {
-
-    // xWin and yWin changed on resize
-    // get window width and window height
-    xWin = $(window).width()
-    yWin = $(window).height()
-})
-
-/**
  * Events
  */
 menuStroke.addEventListener('mouseover', function() {
@@ -62,6 +46,15 @@ menuStroke.addEventListener('mouseover', function() {
 menuStroke.addEventListener('mouseleave', function() {
 
     // change stroke colours back
+    // menu is open or closed
+    var menu
+    if ($('#menu-pop').css('display') === 'block') {
+        menu = true
+    }
+    else if ($('#menu-pop').css('display') === 'none') {
+        menu = false
+    }
+
     if (!menu) {
         $('.menu-btn-stroke').css('background', '#202020')
         $('#menu-stroke').css('border-color', 'transparent')
@@ -76,6 +69,15 @@ menuStroke.addEventListener('click', function(event) {
 
     // prevent default before dealing with click
     event.preventDefault()
+
+    // menu is open or closed
+    var menu
+    if ($('#menu-pop').css('display') === 'block') {
+        menu = true
+    }
+    else if ($('#menu-pop').css('display') === 'none') {
+        menu = false
+    }
 
     // handle click
     if (menu) {
