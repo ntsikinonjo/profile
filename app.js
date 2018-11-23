@@ -118,7 +118,6 @@ function HomeTemplate() {
             }
             else {
                 // should get no arrow and both left and right margins
-                console.log(join + dist)
                 html += '<div class="project-box" style="background: #202020; width: ' + size
                 html += 'px; height: ' + size + 'px; position: fixed; left: ' + join + 'px"></div>'
                 join += size + dist 
@@ -159,7 +158,6 @@ function HomeTemplate() {
             }
             else {
                 // should get no arrow and both left and right margins
-                console.log(join + dist)
                 html += '<div class="project-box" style="background: #202020; width: ' + size
                 html += 'px; height: ' + size + 'px; position: fixed; left: ' + join + 'px"></div>'
                 join += size + dist 
@@ -191,18 +189,23 @@ function HomeTemplate() {
             if (i == 0) {
                 // should get left arrow and have only right margin
                 html += '<div class="project-box" style="background: #202020; width: ' + size
-                html += 'px; height: ' + size + 'px; position: fixed; left: ' + offset + 'px"></div>'
+                html += 'px; height: ' + size + 'px; position: fixed; left: ' + offset
+                html += 'px"><div id="proj-' + (i + 1) + '" class="project-child">'
+                html += '<div class="project-overlay"></div></div></div>'
             }
             else if (i == n - 1) {
                 // should get right arrow and only have left margin
                 html += '<div class="project-box" style="background: #202020; width: ' + size
-                html += 'px; height: ' + size + 'px; position: fixed; right: ' + offset + 'px"></div>'
+                html += 'px; height: ' + size + 'px; position: fixed; right: ' + offset
+                html += 'px"><div id="proj-' + (i + 1) + '" class="project-child">'
+                html += '<div class="project-overlay"></div></div></div>'
             }
             else {
                 // should get no arrow and both left and right margins
-                console.log(join + dist)
                 html += '<div class="project-box" style="background: #202020; width: ' + size
-                html += 'px; height: ' + size + 'px; position: fixed; left: ' + join + 'px"></div>'
+                html += 'px; height: ' + size + 'px; position: fixed; left: ' + join
+                html += 'px"><div id="proj-' + (i + 1) + '" class="project-child">'
+                html += '<div class="project-overlay"></div></div></div>'
                 join += size + dist 
             }
         }
@@ -218,7 +221,40 @@ function AboutTemplate() {
 }
 // Resume Template
 function ResumeTemplate() {
-    return '<div>resume</div>'
+
+    // html string
+    html = '<div><span style="font-family: \'Open Sans\'; font-size: 1.75em;">'
+    html += 'Curriculum Vit&aelig; // R&eacute;sum&eacute;</span><br>'
+
+    // window width
+    var xWin = $(window).width()
+
+    // content height
+    var height = Math.floor(getArea()) - 50
+
+    // sort for different sizes
+    if (xWin < 768) {
+        // smartphones
+        html += '<object width="' + (xWin - 8 - 8) + '" height="' + height + 'px" type="application/pdf"'
+        html += 'data="https://ntsikinonjo.github.io/profile/cv/cv.pdf?#zoom=50&view=FitH&scrollbar=0&toolbar=1&navpanes=0">'
+        html += '<p>pdf can\'t be displayed</p></object>'
+    }
+    else if (xWin >= 768 && xWin < 992) {
+        // medium devices
+        html += '<object width="50%" height="' + height + 'px" type="application/pdf"'
+        html += 'data="https://ntsikinonjo.github.io/profile/cv/cv.pdf?#zoom=50&view=FitH&scrollbar=0&toolbar=1&navpanes=0">'
+        html += '<p>pdf can\'t be displayed</p></object>'
+    }
+    else {
+        // larger than medium
+        html += '<object width="50%" height="' + height + 'px" type="application/pdf"'
+        html += 'data="https://ntsikinonjo.github.io/profile/cv/cv.pdf?#zoom=50&view=FitH&scrollbar=0&toolbar=1&navpanes=0">'
+        html += '<p>pdf can\'t be displayed</p></object>'
+    }
+
+    html += '</div>'
+
+    return html
 }
 // Academics Template
 function AcademicsTemplate() {
@@ -247,9 +283,18 @@ function WarningTemplate() {
 var app = new Vue({
     router,
     // called synchronously after the instance is created
+    beforeCreate: function() {
+
+        // set content area
+        setArea()
+    },
     created: function() {
 
         // on created set click listeners for routes
+        $('#link-home').on('click', function() {
+            router.push('/')
+            closeMenu()
+        })
         $('#link-about').on('click', function() {
             router.push('about')
             closeMenu()
@@ -281,9 +326,6 @@ var app = new Vue({
                 }
             }
         })
-
-        // set content area
-        setArea()
 
         // window width
         var xWin = $(window).width()

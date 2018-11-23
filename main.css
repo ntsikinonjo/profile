@@ -100,6 +100,48 @@ div#menu-pop > ul > li > span {
     font-family: 'Open Sans';
 }
 
+/* project boxes */
+.project-box {
+    overflow: hidden;
+    cursor: pointer;
+}
+.project-child {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    transition: all 250ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.project-child:hover,
+.project-child:focus {
+    transform: scale(1.2);
+}
+.project-overlay {
+    width: 100%;
+    height: 100%;
+}
+.project-overlay:hover,
+.project-overlay:focus {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+/* project backgrounds */
+#proj-1 {
+    background-image: url(img/bg-3d.jpg);
+}
+#proj-2 {
+    background-image: url(img/bg-logo.jpg);
+}
+#proj-3 {
+    background-image: url(img/bg-ui.jpg);
+}
+#proj-4 {
+    background-image: url(img/bg-sites.png);
+}
+#proj-5 {
+    background-image: url(img/bg-code.jpg);
+}
+
 /* breakpoints */
 @media only screen and (max-width: 768px) {
     /* smart phones */
