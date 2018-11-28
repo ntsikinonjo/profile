@@ -224,7 +224,7 @@ function ResumeTemplate() {
 
     // html string
     html = '<div><span style="font-family: \'Open Sans\'; font-size: 1.75em;">'
-    html += 'Curriculum Vit&aelig; // R&eacute;sum&eacute;</span><br>'
+    html += 'Curriculum Vit&aelig; <span style="color: #3771c8;"><b>//</b></span> R&eacute;sum&eacute;</span><br>'
 
     // window width
     var xWin = $(window).width()
@@ -236,19 +236,19 @@ function ResumeTemplate() {
     if (xWin < 768) {
         // smartphones
         html += '<object width="' + (xWin - 8 - 8) + '" height="' + height + 'px" type="application/pdf"'
-        html += 'data="https://ntsikinonjo.github.io/profile/cv/cv.pdf?#zoom=50&view=FitH&scrollbar=0&toolbar=1&navpanes=0">'
+        html += 'data="./cv/cv.pdf?#zoom=50&view=FitH&scrollbar=0&toolbar=1&navpanes=0">'
         html += '<p>pdf can\'t be displayed</p></object>'
     }
     else if (xWin >= 768 && xWin < 992) {
         // medium devices
-        html += '<object width="50%" height="' + height + 'px" type="application/pdf"'
-        html += 'data="https://ntsikinonjo.github.io/profile/cv/cv.pdf?#zoom=50&view=FitH&scrollbar=0&toolbar=1&navpanes=0">'
+        html += '<object width="60%" height="' + height + 'px" type="application/pdf"'
+        html += 'data="./cv/cv.pdf?#zoom=50&view=FitH&scrollbar=0&toolbar=1&navpanes=0">'
         html += '<p>pdf can\'t be displayed</p></object>'
     }
     else {
         // larger than medium
         html += '<object width="50%" height="' + height + 'px" type="application/pdf"'
-        html += 'data="https://ntsikinonjo.github.io/profile/cv/cv.pdf?#zoom=50&view=FitH&scrollbar=0&toolbar=1&navpanes=0">'
+        html += 'data="./cv/cv.pdf?#zoom=50&view=FitH&scrollbar=0&toolbar=1&navpanes=0">'
         html += '<p>pdf can\'t be displayed</p></object>'
     }
 
@@ -271,7 +271,7 @@ function WarningTemplate() {
     $('#app').css('height', Math.round(getArea()))
 
     // html string
-    var html = '<div style="font-size: 1.75em; margin-top: ' + Math.round(getArea()/2) + 'px"><i class="fas fa-sync-alt"></i><br>'
+    var html = '<div style="font-size: 1.75em; margin-top: 8px"><i class="fas fa-sync-alt"></i><br>'
     html = html + '<span style="font-family: \'Open Sans\';">Rotate Screen</span></div>'
 
     return html
@@ -282,14 +282,17 @@ function WarningTemplate() {
  */
 var app = new Vue({
     router,
+    /**
+     * Vue.js Lifecycle Events
+     */
     // called synchronously after the instance is created
     beforeCreate: function() {
 
         // set content area
         setArea()
+
     },
     created: function() {
-
         // on created set click listeners for routes
         $('#link-home').on('click', function() {
             router.push('/')
@@ -389,6 +392,10 @@ var app = new Vue({
                 // resize all elements
             })
         })
+    },
+    // Called when view is done changing
+    updated: function() {
+        //
     }
 }).$mount('#app')
 
