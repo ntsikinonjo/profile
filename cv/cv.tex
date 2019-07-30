@@ -1,7 +1,17 @@
 \documentclass[12pt]{article}
-\usepackage{array, xcolor, lipsum, pifont, hyperref}
+\usepackage{array, xcolor, lipsum, pifont, hyperref, titlesec}
+\usepackage{tabularx, booktabs}
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[margin=2cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage[export]{adjustbox}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\renewcommand{\rmdefault}{phv}
+\renewcommand{\sfdefault}{phv}
 
 \hypersetup{
 	colorlinks,
@@ -9,6 +19,8 @@
 	citecolor={blue!50!black},
 	urlcolor={darkgray!80!black}
 }
+
+\cfoot{\href{https://www.linkedin.com/in/ntsiki-nonjo/}{\includegraphics[height=18px]{logos/linkedin.png}} \href{https://github.com/ntsikinonjo/}{\includegraphics[height=18px]{logos/github.png}}}
 
 \title{\bfseries\Huge Ntsikelelo Nonjoli}
 \author{ntsikinonjo@gmail.com}
@@ -18,10 +30,11 @@
 \newcolumntype{L}{>{\raggedleft}p{0.14\textwidth}}
 \newcolumntype{R}{p{0.8\textwidth}}
 \newcommand\VRule{\color{lightgray}\vrule width 0.5pt}
+\renewcommand{\headrulewidth}{0pt}
 
 \begin{document}
-	
 \maketitle
+\thispagestyle{fancy}
 \vspace{1em}
 % address %
 \begin{minipage}[ht]{0.48\textwidth}
@@ -43,6 +56,20 @@ workplace. To use my skills as a designer and a developer with a company
 that offers a postive atmosphere to learn.
 
 \section*{Education}
+\subsection*{University of the Witwatersrand (2015-present)}
+\begin{tabular}{L!{\VRule}R}
+	&{\vspace{0.25em}\bf Majors}\\[5pt]
+	\ding{118}&Computer Science \\
+	\ding{118}&Mathematical Sciences \\
+	&{\vspace{0.25em}\bf Achievements}\\[5pt]
+	2015&Certificate of First Class: COMS1017 - Introduction to Data Structures and Algorithms \\
+	2015&Certificate of First Class: COMS1018 - Introduction to Algorithms and Programming \\
+	2016&Certificate of First Class: COMS2013 - Mobile Computing \\
+	2016&Certificate of First Class: MATH1036 - Calculus \\
+\end{tabular}
+
+\newpage
+
 \subsection*{Technical High School Klerksdorp (2010-2013)}
 \begin{tabular}{L!{\VRule}R}
 	&{\vspace{0.25em}\bf National Senior Certificate}\\[5pt]
@@ -59,28 +86,6 @@ that offers a postive atmosphere to learn.
 	\ding{118}&Gr.12 2013: Academic Achiever 75.6\% \\
 	\ding{118}&TOP 10 in Grade 12 - Term 2: 2013 76.0\% \\
 	\ding{118}&TOP 10 in Grade 12 - Term 1: 2013 76.3\% \\
-\end{tabular}
-\newpage
-\subsection*{University of the Witwatersrand (2015-present)}
-\begin{tabular}{L!{\VRule}R}
-	&{\vspace{0.25em}\bf Majors}\\[5pt]
-	\ding{118}&Computer Science \\
-	\ding{118}&Mathematical Sciences \\
-	&{\vspace{0.25em}\bf Achievements}\\[5pt]
-	2015&Certificate of First Class: COMS1017 - Introduction to Data Structures and Algorithms \\
-	2015&Certificate of First Class: COMS1018 - Introduction to Algorithms and Programming \\
-	2016&Certificate of First Class: COMS2013 - Mobile Computing \\
-	2016&Certificate of First Class: MATH1036 - Calculus \\
-\end{tabular}
-
-\section*{Languages}
-\begin{tabular}{L!{\VRule}R}
-	Setswana&Home Language\\
-	English&Advanced\\
-	Afrikaans&Fair\\
-	IsiZulu&Fair\\
-	Sesotho&Fair\\
-	IsiXhosa&Poor\\
 \end{tabular}
 
 \section*{Skills}
@@ -109,28 +114,57 @@ that offers a postive atmosphere to learn.
 \newpage
 
 \section*{Tech Stack}
-\begin{tabular}{L!{\VRule}R}
-	\ding{118}&Inkscape (vector logo design)\\
-	\ding{118}&Java\\
-	\ding{118}&CSS\\
-	\ding{118}&JQuery\\
-	\ding{118}&HTML\\
-	\ding{118}&Angular.js\\
-	\ding{118}&Vue.js\\
-	\ding{118}&PHP\\
-	\ding{118}&JavaScript\\
-	\ding{118}&C++\\
-	\ding{118}&Latex\\
-	\ding{118}&Git or Github\\
-	\ding{118}&Adobe XD (UI and UX design)\\
-	\ding{118}&Android Studio
-\end{tabular}
+\subsection*{Application and Data}
+\begin{tabularx}{\columnwidth}{@{\extracolsep{\stretch{1}}}*{4}{c}@{}}
+	\includegraphics[height=48px]{logos/java.png}&  \includegraphics[height=48px]{logos/python.png}&
+	\includegraphics[height=48px]{logos/php.png}&
+	\includegraphics[height=48px]{logos/cpp.png}\\[6pt]
+	\textcolor{gray}{Java}&
+	\textcolor{gray}{Python}&
+	\textcolor{gray}{PHP}&
+	\textcolor{gray}{C++}\\[12pt]
+	\includegraphics[height=48px]{logos/vaadin.png}&
+	\includegraphics[height=48px]{logos/html.png}&
+	\includegraphics[height=48px]{logos/javascript.png}&
+	\includegraphics[height=48px]{logos/css3.png}\\[6pt]
+	\textcolor{gray}{Vaadin}&
+	\textcolor{gray}{HTML5}&
+	\textcolor{gray}{JavaScript}&
+	\textcolor{gray}{CSS3}\\[12pt]
+	\includegraphics[height=48px]{logos/bootstrap.png}&
+	\includegraphics[height=48px]{logos/angular.png}&
+	\includegraphics[height=48px]{logos/vue.png}&
+	\includegraphics[height=32px]{logos/jquery.png}\\[6pt]
+	\textcolor{gray}{Bootstrap}&
+	\textcolor{gray}{Angular}&
+	\textcolor{gray}{Vue}&
+	\textcolor{gray}{jQuery}\\[12pt]
+\end{tabularx}
 
-\section*{Links}
+\subsection*{DevOps}
+\begin{tabularx}{\columnwidth}{@{\extracolsep{\stretch{1}}}*{4}{c}@{}}
+	\includegraphics[height=48px]{logos/github.png}&  \includegraphics[height=48px]{logos/android.png}&
+	\includegraphics[height=48px]{logos/git.png}&\\[6pt]
+	\textcolor{gray}{GitHub}&
+	\textcolor{gray}{Android Studio}&
+	\textcolor{gray}{Git}&\\[12pt]
+\end{tabularx}
+
+\subsection*{Others}
+\begin{tabularx}{\columnwidth}{@{\extracolsep{\stretch{1}}}*{4}{c}@{}}
+	\includegraphics[height=48px]{logos/blender.png}&  \includegraphics[height=48px]{logos/adobe-xd.png}&
+	\includegraphics[height=48px]{logos/inkscape.png}&\\[6pt]
+	\textcolor{gray}{Blender3D}&
+	\textcolor{gray}{Adobe XD}&
+	\textcolor{gray}{Inkscape}&\\[12pt]
+\end{tabularx}
+
+\newpage
+
+\section*{Projects}
 \begin{tabular}{L!{\VRule}R}
-	\ding{118}&\href{https://ntsikinonjo.github.io/profile/}{My Portfolio Website}\\
-	\ding{118}&\href{https://github.com/ntsikinonjo/}{Personal Github}\\
-	\ding{118}&\href{https://github.com/ntsikinonjo/}{School Github}\\
+	\ding{118}&\href{https://github.com/1272371/Atom}{\textcolor{black}{Risk early-warning system}}\\
+	\ding{118}&\href{http://qbank-wits.herokuapp.com}{\textcolor{black}{Question Bank}} \href{https://github.com/Proud-Sachinda/Segfault}{\textcolor{olive}{(GitHub)}}\\
 \end{tabular}
 	
 \end{document}
